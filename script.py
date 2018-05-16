@@ -43,6 +43,20 @@ def run(filename):
 
     if p:
         (commands, symbols) = p
+        i = 0
+        while (i < len(commands)):
+            if (commands[i][0] == "push"):
+                stack.append([x[:] for x in systems[-1]])
+                #print commands[i][0]
+                #mdl.p_command_stack(commands[i][0])
+            if (commands[i][0] == "pop"):
+                stack.pop()
+                #mdl.p_command_stack(commands[i][0])
+            if (commands[i][0] == "save"):
+                #mdl.p_command_save(commands[i])
+            if (commands[i][0] == "display"):
+                #mdl.p_command_show(commands[i])
+            i = i + 1
     else:
         print "Parsing failed."
         return
